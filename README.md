@@ -1,2 +1,2 @@
-# shikanga-workshops
+# Shikanga Workshops
 Shikanga Developer Workshops
