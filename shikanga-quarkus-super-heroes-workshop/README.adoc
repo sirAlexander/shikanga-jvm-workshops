@@ -1,0 +1,39 @@
+= Shikanga's Super Heroes Workshop
+
+This is a hands-on session with Quarkus, where we will be building, consuming and finally assembling microservices into a consistent system.
+
+=== What we will cover in this workshop
+- `microservices` with `Quarkus`
+- use of `HTTP` and `Events` (`Kafka`)
+- monitoring (`Prometheus`)
+- resilience
+
+=== What you get to learn
+- What Quarkus is and how you can use it
+- How to build an HTTP endpoint (`REST API`) with Quarkus
+- The Quarkus way of accessing a database
+- How leverage `Swagger` and `OpenAPI`
+- Microservice testing
+- Resilience in a microservice architecture
+- How to build `event-driven` and `reactive microservices` with `Kafka`
+- How to build `native executable`
+- How to extend Quarkus with extensions
+
+=== Software tools and frameworks required
+- An IDE (Intellij IDEA, Eclipse IDE, VS Code)
+- JDK 8.x
+- GraalVM 19.x
+- Maven 3.6.x
+- Docker 19.x
+- cURL
+- Node JS
+
+==== Ensure you have all the required software tools installed
+```
+$ java -version
+$ $GRAALVM_HOME/bin/native-image --version
+$ mvn -version
+$ curl --version
+$ docker version
+$ docker-compose version
+```
