@@ -1,0 +1,17 @@
+
+= Hero Microservice
+
+==== Bootstrapping the Hero REST Endpoint
+```
+mkdir -p shikanga-quarkus-super-heroes-workshop/shikanga-super-heroes/rest-hero
+
+cd shikanga-quarkus-super-heroes-workshop/shikanga-super-heroes/rest-hero
+
+mvn io.quarkus:quarkus-maven-plugin:1.0.1.Final:create \
+    -DprojectGroupId=uk.co.shikanga.workshop.super-heroes \
+    -DprojectArtifactId=rest-hero \
+    -DprojectVersion=1.0-SNAPSHOT \
+    -DclassName="uk.co.shikanga.workshop.superheroes.hero.HeroResource" \
+    -Dpath="api/heroes"
+    
+```
