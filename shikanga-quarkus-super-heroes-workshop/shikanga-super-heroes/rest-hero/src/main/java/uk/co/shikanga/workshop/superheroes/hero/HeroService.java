@@ -12,7 +12,7 @@ import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 @ApplicationScoped
 @Transactional(REQUIRED)
-public final class HeroService {
+public class HeroService {
 
     @Inject
     HeroRepository heroRepository;

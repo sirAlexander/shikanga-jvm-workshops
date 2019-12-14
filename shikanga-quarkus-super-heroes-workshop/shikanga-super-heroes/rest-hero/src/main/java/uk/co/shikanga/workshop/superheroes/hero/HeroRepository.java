@@ -6,7 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 import java.util.Random;
 
 @ApplicationScoped
-public final class HeroRepository implements PanacheRepository<Hero> {
+public class HeroRepository implements PanacheRepository<Hero> {
 
     public Hero findRandom(){
         long countHeroes = this.count();

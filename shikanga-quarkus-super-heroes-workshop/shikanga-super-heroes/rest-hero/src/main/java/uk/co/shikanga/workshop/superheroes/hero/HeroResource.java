@@ -24,7 +24,7 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("/api/heroes")
 @Produces(APPLICATION_JSON)
-public final class HeroResource {
+public class HeroResource {
 
     private static final Logger LOGGER = Logger.getLogger(HeroResource.class);
 
