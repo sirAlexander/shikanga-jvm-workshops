@@ -1,0 +1,13 @@
+
+= Running the Infrastructure
+
+We will use Docker and docker compose to ease the infrastructure installation.
+
+```
+docker-compose -f docker-compose.yaml up -d
+```
+
+Tear down the infrastructure with the folllowing command:
+```
+docker-compose -f docker-compose.yaml down
+```
