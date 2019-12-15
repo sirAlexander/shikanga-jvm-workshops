@@ -20,9 +20,9 @@ public class HeroResourceTest {
 
     @Container
     private static final PostgreSQLContainer DATABASE = new PostgreSQLContainer<>("postgres:10.5")
-            .withDatabaseName("heroes_database")
-            .withUsername("superman")
-            .withPassword("superman")
+            .withDatabaseName("shikanga_heroes")
+            .withUsername("shaka")
+            .withPassword("shaka")
             .withExposedPorts(5432);
 
     @BeforeAll
@@ -38,7 +38,7 @@ public class HeroResourceTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/api/heroes")
+          .when().get("/api/heroes/hello")
           .then()
              .statusCode(200)
              .body(is("hello hero"));

@@ -88,6 +88,7 @@ public class HeroResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
+    @Path("/hello")
     public String hello() {
         return "hello hero";
     }
