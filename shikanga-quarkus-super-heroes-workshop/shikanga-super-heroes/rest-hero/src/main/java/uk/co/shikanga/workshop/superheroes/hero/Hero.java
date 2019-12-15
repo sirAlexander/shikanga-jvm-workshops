@@ -11,7 +11,7 @@ import java.util.StringJoiner;
 
 @Entity
 @Table(name = "hero")
-public class Hero extends BaseEntity       {
+public class Hero extends BaseEntity {
 
     @NotBlank
     @Size(min = 3, max = 50)
