@@ -70,9 +70,10 @@ public class HeroResource {
     }
 
     @PUT
+    @Path("/{id}")
     public Response updateHero(
-            @Valid Hero hero) {
-        hero = service.updateHero(hero);
+            @PathParam("id") Long id, @Valid Hero hero) {
+        hero = service.updateHero(id, hero);
         LOGGER.debug("Hero updated with new valued " + hero);
         return Response.ok(hero).build();
     }

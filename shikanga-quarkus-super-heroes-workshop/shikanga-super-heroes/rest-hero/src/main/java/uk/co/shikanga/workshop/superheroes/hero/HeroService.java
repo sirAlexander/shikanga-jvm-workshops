@@ -41,8 +41,8 @@ public class HeroService {
         return hero;
     }
 
-    public Hero updateHero(@Valid Hero hero) {
-        Hero entity = heroRepository.findById(hero.getId());
+    public Hero updateHero(Long id, @Valid Hero hero) {
+        Hero entity = heroRepository.findById(id);
         entity.setName(hero.getName());
         entity.setOtherName(hero.getOtherName());
         entity.setLevel(hero.getLevel());
