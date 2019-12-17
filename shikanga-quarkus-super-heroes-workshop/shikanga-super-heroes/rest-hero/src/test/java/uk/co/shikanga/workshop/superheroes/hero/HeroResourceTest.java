@@ -3,7 +3,6 @@ package uk.co.shikanga.workshop.superheroes.hero;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.common.mapper.TypeRef;
 import org.hamcrest.core.Is;
-import org.junit.Ignore;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
@@ -173,9 +172,8 @@ public class HeroResourceTest {
         assertEquals(NB_HEROES + 1, heroes.size());
     }
 
-    //@Ignore
-    //@Test
-   // @Order(3)
+    @Test
+    @Order(3)
     void shouldUpdateAnItem() {
         Hero hero = new Hero();
         hero.setId(Long.valueOf(heroId));
@@ -186,11 +184,12 @@ public class HeroResourceTest {
         hero.setLevel(UPDATED_LEVEL);
 
         given()
+                .pathParam("id", heroId)
                 .body(hero)
                 .header(CONTENT_TYPE, APPLICATION_JSON)
                 .header(ACCEPT, APPLICATION_JSON)
                 .when()
-                .put("/api/heroes")
+                .put("/api/heroes/{id}")
                 .then()
                 .statusCode(OK.getStatusCode())
                 .header(CONTENT_TYPE, APPLICATION_JSON)
@@ -207,9 +206,8 @@ public class HeroResourceTest {
         assertEquals(NB_HEROES + 1, heroes.size());
     }
 
-    //@Ignore
-    //@Test
-    //@Order(4)
+    @Test
+    @Order(4)
     void shouldRemoveAnItem() {
         given()
                 .pathParam("id", heroId)
