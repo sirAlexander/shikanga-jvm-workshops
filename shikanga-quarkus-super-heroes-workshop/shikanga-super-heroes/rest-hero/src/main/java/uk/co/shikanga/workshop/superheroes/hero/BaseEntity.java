@@ -1,9 +1,10 @@
 package uk.co.shikanga.workshop.superheroes.hero;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
@@ -22,13 +23,16 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue
     private Long id;
 
+    @JsonIgnore
     @Version
     private Integer version;
 
+    @JsonIgnore
     @NotNull
     @Column(name = "created_date_time")
     private LocalDateTime createdDateTime = LocalDateTime.now();
 
+    @JsonIgnore
     @NotNull
     @Column(name = "last_updated_date_time")
     private LocalDateTime lastUpdatedDateTime = LocalDateTime.now();
