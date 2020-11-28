@@ -1,14 +1,14 @@
-version: '3.7'
+version: "3"
 
 volumes:
   postgres_data:
 
 services:
   database:
-    image: postgres:10.5
-    container_name: super-database
+    image: "postgres:10.5"
+    container_name: "super-database"
     ports:
-      - 5432:5432
+      - "5432:5432"
     volumes:
       - ./db-init/initialize-databases.sql:/docker-entrypoint-initdb.d/init.sql
       - postgres_data:/var/lib/postgresql/data
