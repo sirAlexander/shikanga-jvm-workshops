@@ -93,7 +93,8 @@ public class HeroResourceTest {
     @Test
     @Order(1)
     void shouldGetInitialItems() {
-        List<Hero> heroes = get("/api/heroes").then()
+        List<Hero> heroes = get("/api/heroes")
+                .then()
                 .statusCode(OK.getStatusCode())
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON)
                 .extract().body().as(getHeroTypeRef());

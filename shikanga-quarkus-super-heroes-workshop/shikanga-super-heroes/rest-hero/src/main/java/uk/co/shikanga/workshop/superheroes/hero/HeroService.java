@@ -1,10 +1,11 @@
 package uk.co.shikanga.workshop.superheroes.hero;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-
 import java.util.List;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
@@ -14,8 +15,15 @@ import static javax.transaction.Transactional.TxType.SUPPORTS;
 @Transactional(REQUIRED)
 public class HeroService {
 
+    private final HeroRepository heroRepository;
+
+    @ConfigProperty(name = "level.multiplier", defaultValue = "1")
+    int levelMultiplier;
+
     @Inject
-    HeroRepository heroRepository;
+    public HeroService(HeroRepository heroRepository) {
+        this.heroRepository = heroRepository;
+    }
 
     @Transactional(SUPPORTS)
     public List<Hero> findAllHeroes() {
@@ -37,6 +45,7 @@ public class HeroService {
     }
 
     public Hero persistHero(@Valid Hero hero) {
+        hero.setLevel(hero.getLevel() * levelMultiplier);
         heroRepository.persist(hero);
         return hero;
     }
